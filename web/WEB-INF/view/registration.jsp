@@ -18,5 +18,6 @@
     </form>
 </fieldset>
 
+<jsp:include page="fragments/footer.jsp"/>
 </body>
 </html>

@@ -37,5 +37,6 @@
 <p>&nbsp;</p>
 <a href="<c:url value="/logout"/>">logout</a>
 
+<jsp:include page="fragments/footer.jsp"/>
 </body>
 </html>
