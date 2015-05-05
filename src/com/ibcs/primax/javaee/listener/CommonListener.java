@@ -2,6 +2,7 @@ package com.ibcs.primax.javaee.listener; /**
  * Created by instructor on 5/4/2015.
  */
 
+import com.ibcs.primax.javaee.model.Message;
 import com.ibcs.primax.javaee.model.User;
 import com.ibcs.primax.javaee.utils.Constant;
 
@@ -28,6 +29,9 @@ public class CommonListener implements ServletContextListener {
       */
         List<User> userList = new ArrayList<User>();
         sce.getServletContext().setAttribute(Constant.USER_LIST, userList);
+
+        List<Message> messageList = new ArrayList<Message>();
+        sce.getServletContext().setAttribute(Constant.MESSAGE_LIST, messageList);
     }
 
     public void contextDestroyed(ServletContextEvent sce) {

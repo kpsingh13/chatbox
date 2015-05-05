@@ -15,5 +15,7 @@
     </form>
 </fieldset>
 
+Didn't have an account? <a href="${pageContext.request.contextPath}/register">Register now!</a>
+
 </body>
 </html>

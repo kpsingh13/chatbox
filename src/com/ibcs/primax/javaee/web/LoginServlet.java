@@ -23,7 +23,9 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
+
         User user = userService.getUser(email, password, getServletContext());
+
         if (user == null) {
             request.setAttribute("error", "Username/Password invalid");
             request.getRequestDispatcher("/WEB-INF/view/login.jsp").forward(request, response);
