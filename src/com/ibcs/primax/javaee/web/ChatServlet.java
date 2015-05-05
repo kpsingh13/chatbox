@@ -18,9 +18,7 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Created by instructor on 5/4/2015.
- */
+
 @WebServlet(name = "ChatServlet", urlPatterns = "/user/chat")
 public class ChatServlet extends HttpServlet {
 

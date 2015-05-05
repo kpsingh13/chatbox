@@ -11,9 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * Created by instructor on 5/4/2015.
- */
+
 @WebServlet(name = "RegistrationServlet", urlPatterns = "/register")
 public class RegistrationServlet extends HttpServlet {
     UserService userService = new UserServiceImpl();
@@ -23,6 +21,10 @@ public class RegistrationServlet extends HttpServlet {
         String lastName = request.getParameter("lastName");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
+
+        if (email.length() == 0) {
+            throw new IllegalArgumentException("User must enter an email");
+        }
 
         User user = new User(firstName, lastName, email, password);
         userService.saveUser(user, getServletContext());
