@@ -1,4 +1,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+<fmt:requestEncoding value="UTF-8" />
+<fmt:setLocale value="${param.lang}"/>
+<fmt:setBundle basename="i18n/ApplicationResources"/>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -28,7 +34,7 @@
 </form>
 
 
-Didn't have an account? <a href="${pageContext.request.contextPath}/register">Register now!</a>
+<fmt:message key="user.login.registration.prompt"/> <a href="${pageContext.request.contextPath}/register"><fmt:message key="user.login.registration.now"/></a>
 
 <jsp:include page="fragments/footer.jsp"/>
 
