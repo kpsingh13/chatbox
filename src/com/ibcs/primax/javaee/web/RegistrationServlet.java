@@ -3,6 +3,8 @@ package com.ibcs.primax.javaee.web;
 import com.ibcs.primax.javaee.model.User;
 import com.ibcs.primax.javaee.service.UserService;
 import com.ibcs.primax.javaee.service.UserServiceImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,6 +16,8 @@ import java.io.IOException;
 
 @WebServlet(name = "RegistrationServlet", urlPatterns = "/register")
 public class RegistrationServlet extends HttpServlet {
+    public static final Logger log = LoggerFactory.getLogger(RegistrationServlet.class);
+
     UserService userService = new UserServiceImpl();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -34,6 +38,7 @@ public class RegistrationServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        log.debug("GET request at /register");
         request.getRequestDispatcher("/WEB-INF/view/registration.jsp").forward(request, response);
     }
 }
