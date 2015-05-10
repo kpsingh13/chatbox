@@ -32,8 +32,9 @@ public class CalculationTagHandler extends SimpleTagSupport {
 
         double priceWithTaxRate = getPrice() * 1.15;
 
-        DecimalFormat myFormatter = new DecimalFormat("$##,###.##");
+        DecimalFormat formatter = new DecimalFormat("$##,###.##");
 
-        jspWriter.write("Price (with Tax): " + myFormatter.format(priceWithTaxRate));
+        getJspBody().invoke(jspWriter);
+        jspWriter.write(formatter.format(priceWithTaxRate));
     }
 }

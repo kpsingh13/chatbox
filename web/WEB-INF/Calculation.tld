@@ -12,7 +12,7 @@
     <tag>
         <name>calculateTax</name>
         <tag-class>com.ibcs.primax.javaee.taglib.CalculationTagHandler</tag-class>
-        <body-content>empty</body-content>
+        <body-content>scriptless</body-content>
 
         <attribute>
             <name>price</name>

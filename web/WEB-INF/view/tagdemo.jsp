@@ -13,7 +13,10 @@
 </p>
 
 <p>
-    Custom Tag Demo -> <ct:calculateTax price="${mobilePrice}"/> taka
+    Custom Tag Demo <br/>
+    <b>
+        <ct:calculateTax price="${mobilePrice}"> Mobile Price with Tax: </ct:calculateTax>
+    </b>
 </p>
 
 </body>
