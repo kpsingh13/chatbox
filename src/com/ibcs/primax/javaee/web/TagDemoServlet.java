@@ -18,6 +18,7 @@ public class TagDemoServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setAttribute("mobilePrice", 50000);
         request.getRequestDispatcher("/WEB-INF/view/tagdemo.jsp").forward(request, response);
     }
 }
